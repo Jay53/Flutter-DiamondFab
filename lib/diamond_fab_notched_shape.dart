@@ -17,38 +17,38 @@ class DiamondFabNotchedShape extends NotchedShape {
 
   @override
   Path getOuterPath(Rect host, Rect guest) {
-    final Rect marginFab = guest.inflate(12);
+    final Rect fabMargin = guest.inflate(12);
     double radius = 10;
-    final Rect intersection = marginFab.intersect(host);
+    final Rect intersection = fabMargin.intersect(host);
     final double notchCenter = intersection.height *
-        (marginFab.height / 2.0) /
-        (marginFab.width / 2.0);
+        (fabMargin.height / 2.0) /
+        (fabMargin.width / 2.0);
 
     Path path = Path();
     path.moveTo(host.left, host.top);
     if (borderRadius == null || borderRadius == 0) {
-      path.lineTo(marginFab.center.dx - notchCenter, host.top);
-      path.lineTo(marginFab.left + marginFab.width / 2.0, marginFab.bottom);
-      path.lineTo(marginFab.center.dx + notchCenter, host.top);
+      path.lineTo(fabMargin.center.dx - notchCenter, host.top);
+      path.lineTo(fabMargin.left + fabMargin.width / 2.0, fabMargin.bottom);
+      path.lineTo(fabMargin.center.dx + notchCenter, host.top);
     } else {
-      path.lineTo(marginFab.center.dx - notchCenter - radius, host.top);
+      path.lineTo(fabMargin.center.dx - notchCenter - radius, host.top);
       path.arcToPoint(
-        Offset(marginFab.center.dx - notchCenter + radius, host.top + radius),
+        Offset(fabMargin.center.dx - notchCenter + radius, host.top + radius),
         radius: Radius.circular(borderRadius * 2),
       );
-      path.lineTo(marginFab.left + marginFab.width / 2.0 - radius,
-          marginFab.bottom - radius);
+      path.lineTo(fabMargin.left + fabMargin.width / 2.0 - radius,
+          fabMargin.bottom - radius);
       path.arcToPoint(
-          Offset(marginFab.left + marginFab.width / 2.0 + radius,
-              marginFab.bottom - radius),
+          Offset(fabMargin.left + fabMargin.width / 2.0 + radius,
+              fabMargin.bottom - radius),
           radius: Radius.circular(borderRadius),
           clockwise: false);
       path.lineTo(
-          marginFab.center.dx + notchCenter - radius, host.top + radius);
+          fabMargin.center.dx + notchCenter - radius, host.top + radius);
       path.lineTo(
-          marginFab.center.dx + notchCenter - radius, host.top + radius);
+          fabMargin.center.dx + notchCenter - radius, host.top + radius);
       path.arcToPoint(
-        Offset(marginFab.center.dx + notchCenter + radius, host.top),
+        Offset(fabMargin.center.dx + notchCenter + radius, host.top),
         radius: Radius.circular(borderRadius * 2),
       );
     }
