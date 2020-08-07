@@ -27,11 +27,11 @@ To use this package :
 
 ```dart
 //...
-fabButton() => DiamondNotchedFab(
-         onPressed: (){},
-         backgroundColor: Colors.greenAccent,
-         child: Icon(Icons.add),
-         );
+fabButton() =>  DiamondNotchedFab(
+                onPressed: (){},
+                backgroundColor: Colors.greenAccent,
+                child: Icon(Icons.add),
+                );
 //...
 ```
 
