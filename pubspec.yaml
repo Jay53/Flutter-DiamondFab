@@ -1,7 +1,8 @@
 name: diamond_notched_fab
 description: A simple package for adding a Diamond Shaped Floating Action Button with triangular notched in buttom app bar.
 version: 0.0.1
-author: Jay Patel (jaypatel.patel53@gmail.com)
+authors:
+  - Jay Patel (jaypatel.patel53@gmail.com)
 homepage: https://github.com/Jay53/Flutter-DiamondFab
 
 environment:
